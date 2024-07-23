@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #4A738C;
+}
+
+.navbar-nav .nav-link.active,
+.nav-produtos .nav-link.active,
+.nav-produtos .nav-link.active:focus,
+.tab-content button,
+.tab-content button:focus {
+    background-color: #BF5B04;
+    color: #fff;
+}
+
+.tab-content button:hover {
+    background-color: #db6b09;
+    color: #fff;
+}
+
+.section-title {
+    font-family: "Anton SC", sans-serif;
+}
+
+.text-colored,
+.nav-produtos .nav-link:hover,
+.nav-produtos .nav-link:focus {
+    color: #bf5b04;
+}
+
+.carousel-item {
+    max-height: 500px;
+}
+
+.carousel-caption {
+    background-color: #00000036;
+    backdrop-filter: blur(5px);
+}
+
+#categorias,
+.card {
+    background-color: #4a738c2d;
+}
