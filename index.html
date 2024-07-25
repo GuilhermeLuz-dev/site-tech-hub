@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechHub</title>
+    <link rel="shortcut icon" href="./assets/images/technology_3206023.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +21,19 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="./script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="./jQuery-Mask-Plugin-master/src/jquery.mask.js" defer></script>
+    <script src="./jquery-validate/dist/jquery.validate.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark py-3 sticky-top">
+    <header class="navbar navbar-expand-lg navbar-dark py-3 sticky-top" id="cabecalho">
         <div class="container">
             <div>
-                <h1 class="navbar-brand m-0 section-title">TechHub.com</h1>
+                <a class="text-decoration-none" href="#">
+                    <h1 class="navbar-brand m-0 section-title">TechHub.com</h1>
+                </a>
             </div>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -35,408 +41,546 @@
             <nav id="menu" class="navbar-collapse collapse justify-content-end">
                 <ul class="navbar-nav nav-pills mt-3 mt-lg-0">
                     <li class="nav-item text-center">
-                        <a href="#" class="nav-link fw-bold active">Home</a>
+                        <a href="#sobre" class="nav-link fw-bold active">Home</a>
                     </li>
                     <li class="nav-item text-center">
-                        <a href="#" class="nav-link fw-bold">Categorias</a>
+                        <a href="#categorias" class="nav-link fw-bold">Categorias</a>
                     </li>
                     <li class="nav-item text-center">
-                        <a href="#" class="nav-link fw-bold">Catálogo</a>
+                        <a href="#catalogo" class="nav-link fw-bold">Catálogo</a>
                     </li>
                     <li class="nav-item text-center">
-                        <a href="#" class="nav-link fw-bold">Entre em contato</a>
+                        <a href="#fale-conosco" class="nav-link fw-bold">Fale conosco</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section id="sobre">
-        <div id="carousel-sobre" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="carousel-caption section-title rounded text-colored">
-                        <h2>Encontre seu Notebook perfeito!</h2>
+    <div data-bs-spy="scroll" data-bs-target="#cabecalho" data-bs-smooth-scroll="true">
+        <section id="sobre">
+            <div id="carousel-sobre" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item w-100 active">
+                        <div class="carousel-caption section-title rounded text-colored">
+                            <h2>Encontre seu Notebook perfeito!</h2>
+                        </div>
+                        <img class="object-fit-cover w-100 h-100"
+                            src="./assets/images/carrousel/laptop-5673901_1280.jpg" alt="Dispositivos eletrônicos">
                     </div>
-                    <img class="object-fit-cover w-100 h-100" src="./assets/images/carrousel/laptop-5673901_1280.jpg"
-                        alt="Dispositivos eletrônicos">
-                </div>
-                <div class="carousel-item ">
-                    <div class="carousel-caption section-title rounded text-colored">
-                        <h2>Componentes para seu PC</h2>
+                    <div class="carousel-item w-100 ">
+                        <div class="carousel-caption section-title rounded text-colored">
+                            <h2>Componentes para seu PC</h2>
+                        </div>
+                        <img class="object-fit-cover w-100 h-100"
+                            src="./assets/images/carrousel/componentes-eletronicos.jpg" alt="Componêntes eletrônicos">
                     </div>
-                    <img class="object-fit-cover w-100 h-100"
-                        src="./assets/images/carrousel/componentes-eletronicos.jpg" alt="Componêntes eletrônicos">
-                </div>
-                <div class="carousel-item ">
-                    <div class="carousel-caption section-title rounded text-colored">
-                        <h2>Monte seu Setup!</h2>
+                    <div class="carousel-item w-100 ">
+                        <div class="carousel-caption section-title rounded text-colored">
+                            <h2>Monte seu Setup!</h2>
+                        </div>
+                        <img class="object-fit-cover w-100 h-100" src="./assets/images/carrousel/setup.jpg"
+                            alt="Escritório">
                     </div>
-                    <img class="object-fit-cover w-100 h-100" src="./assets/images/carrousel/setup.jpg"
-                        alt="Escritório">
+                </div>
+                <button type="button" class="carousel-control-prev" data-bs-target="#carousel-sobre"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#carousel-sobre"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" class="active" data-bs-target="#carousel-sobre" data-bs-slide-to="0"></button>
+                    <button type="button" data-bs-target="#carousel-sobre" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carousel-sobre" data-bs-slide-to="2"></button>
                 </div>
             </div>
-            <button type="button" class="carousel-control-prev" data-bs-target="#carousel-sobre" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button type="button" class="carousel-control-next" data-bs-target="#carousel-sobre" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-            <div class="carousel-indicators">
-                <button type="button" class="active" data-bs-target="#carousel-sobre" data-bs-slide-to="0"></button>
-                <button type="button" data-bs-target="#carousel-sobre" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#carousel-sobre" data-bs-slide-to="2"></button>
-            </div>
-        </div>
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-6">
-                    <img class="w-100 object-fit-cover rounded" src="./assets/images/dispositivos.jpg"
-                        alt="Dispositivos">
-                </div>
-                <div class="col-6">
-                    <h2 class="section-title">Sobre a <span class="text-colored">TechHub</span></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam quibusdam consequatur
-                        doloribus nulla perferendis, illum nihil porro maiores in odio nisi dolorum minima cumque,
-                        accusantium perspiciatis aliquam ipsam quidem?</p>
-                    <h2 class="section-title">O que <span class="text-colored">você procura?</span></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam quibusdam consequatur
-                        doloribus nulla perferendis, illum nihil porro maiores in odio nisi dolorum minima cumque,
-                        accusantium perspiciatis aliquam ipsam quidem?</p>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                        <img class="w-100 object-fit-cover rounded" src="./assets/images/dispositivos.jpg"
+                            alt="Dispositivos">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="section-title">Sobre a <span class="text-colored">TechHub</span></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam quibusdam consequatur
+                            doloribus nulla perferendis, illum nihil porro maiores in odio nisi dolorum minima cumque,
+                            accusantium perspiciatis aliquam ipsam quidem?</p>
+                        <h2 class="section-title">O que <span class="text-colored">você procura?</span></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam quibusdam consequatur
+                            doloribus nulla perferendis, illum nihil porro maiores in odio nisi dolorum minima cumque,
+                            accusantium perspiciatis aliquam ipsam quidem?</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="categorias">
-        <div class="container py-5">
-            <div class="row mb-3">
-                <h1 class="section-title text-colored text-center">Categorias</h1>
+        </section>
+        <section id="categorias">
+            <div class="container py-5">
+                <div class="row mb-3">
+                    <h1 class="section-title text-colored text-center">Categorias</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/hardware.jpg"
+                            alt="Placa de vídeo">
+                        <h2 class="section-title fs-6 text-colored my-2">Hardware</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <img class="object-fit-cover w-100 h-75 rounded"
+                            src="./assets/images/categorias/perifericos.jpg" alt="Placa de vídeo">
+                        <h2 class="section-title fs-6 text-colored my-2">Periféricos</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <img class="object-fit-cover w-100 h-75 rounded"
+                            src="./assets/images/categorias/laptop-close.jpg" alt="Placa de vídeo">
+                        <h2 class="section-title fs-6 text-colored my-2">Computadores</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/office.jpg  "
+                            alt="Placa de vídeo">
+                        <h2 class="section-title fs-6 text-colored my-2">Escritório</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/hardware.jpg"
-                        alt="Placa de vídeo">
-                    <h2 class="section-title fs-6 text-colored my-2">Hardware</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </section>
+        <section id="catalogo">
+            <div class="container py-5">
+                <div class="row mb-3">
+                    <h1 class="text-center text-colored section-title">Produtos</h1>
                 </div>
-                <div class="col-md-3">
-                    <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/perifericos.jpg"
-                        alt="Placa de vídeo">
-                    <h2 class="section-title fs-6 text-colored my-2">Periféricos</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="col-md-3">
-                    <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/laptop-close.jpg"
-                        alt="Placa de vídeo">
-                    <h2 class="section-title fs-6 text-colored my-2">Computadores</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="col-md-3">
-                    <img class="object-fit-cover w-100 h-75 rounded" src="./assets/images/categorias/office.jpg  "
-                        alt="Placa de vídeo">
-                    <h2 class="section-title fs-6 text-colored my-2">Escritório</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="catalogo">
-        <div class="container py-5">
-            <div class="row mb-3">
-                <h1 class="text-center text-colored section-title">Produtos</h1>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <nav class="nav nav-pills flex-column nav-produtos">
-                        <button href="#" data-bs-target="#computadores-tab" data-bs-toggle="tab" class="nav-link text-colored fw-bold active">Computadores</button>
-                        <button href="#" data-bs-target="#perifericos-tab" data-bs-toggle="tab" class="nav-link text-colored fw-bold">Periféricos</button>
-                        <button href="#" data-bs-target="#games-tab" data-bs-toggle="tab" class="nav-link text-colored fw-bold">Para gamers</button>
-                        <button href="#" data-bs-target="#hardwares-tab" data-bs-toggle="tab" class="nav-link text-colored fw-bold">Hardware</button>
-                    </nav>
-                </div>
-                <div class="col-md-8">
-                    <div class="tab-content">
-                        <div id="computadores-tab" class="tab-pane active">
-                            <div class="row">
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/cadeira-gamer.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
+                <div class="row">
+                    <div class="col-md-3">
+                        <nav class="nav nav-pills flex-column nav-produtos">
+                            <button href="#" data-bs-target="#computadores-tab" data-bs-toggle="tab"
+                                class="nav-link text-colored fw-bold text-start active">Computadores</button>
+                            <button href="#" data-bs-target="#perifericos-tab" data-bs-toggle="tab"
+                                class="nav-link text-colored fw-bold text-start">Periféricos</button>
+                            <button href="#" data-bs-target="#games-tab" data-bs-toggle="tab"
+                                class="nav-link text-colored fw-bold text-start">Para gamers</button>
+                            <button href="#" data-bs-target="#hardwares-tab" data-bs-toggle="tab"
+                                class="nav-link text-colored fw-bold text-start">Hardware</button>
+                            <button href="#" data-bs-target="#escritorio-tab" data-bs-toggle="tab"
+                                class="nav-link text-colored fw-bold text-start">Escritório</button>
+                        </nav>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content">
+                            <div id="computadores-tab" class="tab-pane active">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/computadores/notebook.jpg" alt="Notebook">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Notebook
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/categorias/laptop-close.jpg" alt="Notebook">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Notebook
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/computadores/notebook.jpg" alt="Notebook">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Notebook
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/categorias/laptop-close.jpg" alt="Notebook">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Notebook
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/cadeira-gamer.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
+                            </div>
+                            <div id="perifericos-tab" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/black-headphones-digital-device.jpg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Headphones
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/oculos-realidade-virtual.jpeg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Oculos de
+                                                    realidade virtual</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/teclado-e-mause.jpeg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Teclado e
+                                                    mause
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/black-headphones-digital-device.jpg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Headphones
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/oculos-realidade-virtual.jpeg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Oculos de
+                                                    realidade virtual</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit.</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/perifericos/teclado-e-mause.jpeg"
+                                                alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Teclado e
+                                                    mause
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/cadeira-gamer.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
+                            </div>
+                            <div id="games-tab" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/gamer/Controle-Joystick-Gamepad.jpeg"
+                                                alt="Controle Joystick">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Controle
+                                                    Joystick</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/gamer/gta-ps4.jpeg" alt="GTA ps4">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">GTA PS4</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/gamer/Controle-Joystick-Gamepad.jpeg"
+                                                alt="Controle Joystick">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Controle
+                                                    Joystick</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/gamer/gta-ps4.jpeg" alt="GTA ps4">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">GTA PS4</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/cadeira-gamer.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
+                            </div>
+                            <div id="hardwares-tab" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/hardware/culer.jpeg" alt="Culer">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Culer</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/hardware/placa-de-video.jpg"
+                                                alt="Placa de vídeo">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Placa de
+                                                    vídeo
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/hardware/processador-intel.jpeg"
+                                                alt="Processador intel">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Processardor
+                                                    Intel</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/hardware/ssd.jpg" alt="SSD">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/cadeira-gamer.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
+                            </div>
+                            <div id="escritorio-tab" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/escritorio/Mesa-para-Escritrio.png"
+                                                alt="Mesa para escritorio">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Mesa para
+                                                    escritorio
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/escritorio/Cadeira-De-Escritorio.jpeg"
+                                                alt="Cadeira para escritório">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Cadeira de
+                                                    escritório
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/escritorio/Mesa-para-Escritrio.png"
+                                                alt="Mesa para escritorio">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Mesa para
+                                                    escritorio
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card p-1 border-0">
+                                            <img class="card-img object-fit-cover w-100 rounded"
+                                                src="./assets/images/produtos/escritorio/Cadeira-De-Escritorio.jpeg"
+                                                alt="Cadeira para escritório">
+                                            <div class="card-body">
+                                                <h2 class="card-title section-title text-colored fs-5 mt-2">Caderia de
+                                                    escritório
+                                                </h2>
+                                                <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
+                                                <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
+                                                <p class="card-text fw-bold m-0">R$950,90</p>
+                                                <button class="card-link btn w-100">Comprar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="perifericos-tab" class="tab-pane">
-                            <div class="row">
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fale-conosco">
+            <div class="container py-5">
+                <div class="row mb-3">
+                    <h1 class="section-title text-center">Fale <span class="text-colored">conosco</span></h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <form>
+                            <div class="mb-2">
+                                <label for="nome" class="form-label fw-bold text-colored">Nome:</label>
+                                <input type="text" name="nome" class="form-control" id="nome" required>
                             </div>
+                            <div class="mb-2">
+                                <label for="email" class="form-label fw-bold text-colored">E-mail:</label>
+                                <input type="email" name="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="telefone" class="form-label fw-bold text-colored">Telefone:</label>
+                                <input type="tel" name="telefone" class="form-control" id="telefone"
+                                    placeholder="(__) _ __-__" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="mensagem" class="form-label fw-bold text-colored">Mensagem:</label>
+                                <textarea type="text" name="mensagem" class="form-control" id="mensagem"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn w-50 fw-bold">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <h4 class="section-title text-colored">Redes</h4>
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-facebook text-colored fs-5"></i>
+                                    </a>
+                                </li>
+                                <li class="mx-2">
+                                    <a href="#">
+                                        <i class="bi bi-instagram text-colored fs-5"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-whatsapp text-colored fs-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div id="games-tab" class="tab-pane">
-                            <div class="row">
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="hardwares-tab" class="tab-pane">
-                            <div class="row">
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-2">
-                                    <div class="card p-1 border-0">
-                                        <img class="card-img object-fit-cover w-100 rounded"
-                                            src="./assets/images/produtos/ssd.jpg" alt="SSD">
-                                        <div class="card-body">
-                                            <h2 class="card-title section-title text-colored fs-5 mt-2">SSD</h2>
-                                            <p class="card-text m-0">Lorem ipsum dolor sit amet consectetur</p>
-                                            <p class="card-text fs-6 m-0 text-decoration-line-through">R$999,99</p>
-                                            <p class="card-text fw-bold m-0">R$950,90</p>
-                                            <button class="card-link btn w-100">Comprar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row">
+                            <h4 class="section-title text-colored">Endereço</h4>
+                            <p>Rua Java Script dos santos, Bootstrap - BA</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-    </section>
+        </section>
+    </div>
 </body>
 
 </html>

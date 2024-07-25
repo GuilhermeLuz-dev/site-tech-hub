@@ -10,7 +10,8 @@ header {
 .nav-produtos .nav-link.active,
 .nav-produtos .nav-link.active:focus,
 .tab-content button,
-.tab-content button:focus {
+.tab-content button:focus,
+#fale-conosco form button {
     background-color: #BF5B04;
     color: #fff;
 }
@@ -31,7 +32,7 @@ header {
 }
 
 .carousel-item {
-    max-height: 500px;
+    height: 530px;
 }
 
 .carousel-caption {
@@ -40,6 +41,25 @@ header {
 }
 
 #categorias,
-.card {
+.card, 
+#fale-conosco {
     background-color: #4a738c2d;
+}
+
+#fale-conosco form button{
+    cursor: pointer;
+}
+
+#fale-conosco form button:hover{
+    background-color: #db6b09;
+}
+
+li{
+    list-style: none;
+}
+
+@media screen and (max-width: 676px) {
+    .carousel-item {
+        height: 300px;
+    }
 }
